@@ -21,9 +21,9 @@ while True:
     if opt == "1":
         generar_compra(OPT1_TITLE, SUBTITLE)
     elif opt == "2":
-        consultar_compras("",OPT2_TITLE, SUBTITLE)
+        consultar_compras("",OPT2_TITLE, SUBTITLE, 0)
     elif opt == "3":
-        cancelar_compra(OPT3_TITLE, SUBTITLE)
+        cancelar_compra(OPT3_TITLE, SUBTITLE, 0)
     elif opt == "4":
         print("Gracias por su preferencia. Adiós!")
         break
