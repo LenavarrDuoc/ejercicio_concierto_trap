@@ -31,3 +31,37 @@ def generar_compra(title = "", subtitle = ""):
 
     compras.append(compra)
     print(f"Se ha generado la venta exitósamente:\n-Comprador: {customer_name}.\n-Tipo de entrada: {ticket_type}.\n-Código de confirmación: {confirmation_code}.")
+
+def consultar_compras(title, subtitle):
+    """Busca los elementos de la lista indicada en el argumento e imprime su contenido. De no haber contenido, imprime que la lista está vacía."""
+    found = False
+    posicion = 0
+    clear()
+    if len(compras) == 0:
+            generar_titulos(title, subtitle)
+            print("La lista está vacía. Aún no hay ingresos.")
+    else:
+        generar_titulos(title, subtitle)
+        search_value = input("Ingrese nombre del comprador a buscar: ")
+        for x in (compras):
+            if x['comprador'] == search_value:
+                found = True
+                posicion = compras.index(x)
+                contenido_x = str(x).replace("{", "").replace("}", "").replace("'", "").replace("[", "").replace("]", "").replace(",", " |")
+                print(f"Venta n°{compras.index(x)} => " + contenido_x)
+            else:
+                print("El comprador no se encuentra.")
+    return found, posicion, len(compras)
+
+def cancelar_compra(title, subtitle, print=0):
+    while True:
+        search = consultar_compras(title, subtitle, imprimir=0)
+        if search[0]:
+            break
+        opt = input("¿Desea remover esta compra?\.1 Sí.\n2. No.\n:")
+        if opt == "1":
+            posicion = search[1]
+            compras.pop(posicion)
+            print("Se ha borrado la compra.")
+        elif opt == "2":
+            print("No se generaron cambios.")

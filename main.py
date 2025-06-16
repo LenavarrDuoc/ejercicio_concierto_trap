@@ -1,6 +1,7 @@
 from funciones import *
 MAIN_TITLE = "SISTEMA DE VENTA DE ENTRADAS"
 OPT1_TITLE = "Compra de entrada"
+OPT2_TITLE = "Consultar comprador"
 SUBTITLE = "Concierto de Trap con el 'Conejo Simpático'"
 
 MAIN_MENU = f"""
@@ -19,7 +20,7 @@ while True:
     if opt == "1":
         generar_compra(OPT1_TITLE, SUBTITLE)
     elif opt == "2":
-        pass
+        consultar_compras(OPT2_TITLE, SUBTITLE)
     elif opt == "3":
         pass
     elif opt == "4":
