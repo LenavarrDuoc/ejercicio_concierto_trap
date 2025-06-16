@@ -2,12 +2,13 @@ from funciones import *
 MAIN_TITLE = "SISTEMA DE VENTA DE ENTRADAS"
 OPT1_TITLE = "Compra de entrada"
 OPT2_TITLE = "Consultar comprador"
+OPT3_TITLE = "Cancelar compra"
 SUBTITLE = "Concierto de Trap con el 'Conejo Simpático'"
 
 MAIN_MENU = f"""
 Opciones:
 1. Comprar entrada.
-2. COnsultar comprador.
+2. Consultar comprador.
 3. Cancelar compra.
 4. Salir."""
 
@@ -20,9 +21,9 @@ while True:
     if opt == "1":
         generar_compra(OPT1_TITLE, SUBTITLE)
     elif opt == "2":
-        consultar_compras(OPT2_TITLE, SUBTITLE)
+        consultar_compras("",OPT2_TITLE, SUBTITLE)
     elif opt == "3":
-        pass
+        cancelar_compra(OPT3_TITLE, SUBTITLE)
     elif opt == "4":
         print("Gracias por su preferencia. Adiós!")
         break
